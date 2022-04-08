@@ -1,0 +1,17 @@
+---
+ - name: enable http service in firewall
+   hosts: all
+   tasks: 
+
+    - name: enable http service in current zone
+      firewalld:
+        zone: public
+        service: http
+        permanent: yes
+        state: enabled
+
+    - name: restart firewalld
+      service:
+        name: firewalld
+        state: restarted
+      

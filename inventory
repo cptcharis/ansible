@@ -1,5 +1,11 @@
-[servers]
+[control_servers]
 alma-control
+
+[web_servers]
 alma-node1
+archnode1
+
+[database_servers]
+archnode2
 alma-node2
 

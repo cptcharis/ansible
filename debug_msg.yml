@@ -1,0 +1,7 @@
+---
+- name: debug msg playbook
+  hosts: all
+  tasks:
+   - name: use debug module into playbook
+     debug:
+       msg: "This is {{ansible_hostname}} server"
