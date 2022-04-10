@@ -1,0 +1,11 @@
+---
+- name: Copy files with Ansible
+  hosts: web_servers
+  tasks:
+    - name: copy default html file for site
+      copy:
+        src: default_sites.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: 0644

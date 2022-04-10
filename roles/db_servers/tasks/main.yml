@@ -1,0 +1,11 @@
+- name: Install mysql on Alma
+  dnf:
+    name: mysql 
+    state: latest
+  when: ansible_os_family == "RedHat"
+
+- name: Install mariadb on Arch
+  pacman:
+    name: mariadb
+    state: latest
+  when: ansible_os_family == "Archlinux"
