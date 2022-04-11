@@ -1,0 +1,13 @@
+---
+
+- name: Install data bases in database_serves
+  hosts: database_servers
+  tasks:
+    - name: update repos for servers
+      package: 
+        update_cache: yes
+
+- name: Install databases packages 
+  hosts: database_servers
+  roles: 
+    - db_servers

@@ -1,0 +1,6 @@
+---
+- name: Bootstrape Playbook
+  hosts: all
+  roles:
+    - base
+

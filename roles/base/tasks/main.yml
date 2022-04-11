@@ -1,0 +1,25 @@
+  - name: Update Repos Of All Servers
+    tags: always
+    package: 
+      update_cache: yes
+
+  - name: Add new user
+    user: 
+      name: ansible
+      groups: root
+
+
+  - name: add ssh key for ansible user
+    authorized_key:
+      user: ansible
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIW0lqmkk0t/oesvqLKODIT8W8cpX4yN/8ZOl7cLRqoG ansible key"
+
+
+  - name: add sudoers file for ansible
+    copy:
+      src: sudoers_ansible
+      dest: /etc/sudoers.d/ansible
+      owner: root
+      group: root
+      mode: 0440
+

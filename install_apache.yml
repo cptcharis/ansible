@@ -1,0 +1,14 @@
+---
+
+- name: Install apache in web_servers
+  hosts: web_servers
+  tasks:
+    - name: update repos for servers
+      package:
+        update_cache: yes
+
+
+- name: Install apache packages
+  hosts: web_servers
+  roles:
+    - web_servers
