@@ -1,0 +1,25 @@
+
+    - name: install SFTP packages
+      yum:
+        name: vsftpd
+        state: present
+
+    - name: Adding service SFTP in firewall
+      firewalld:
+        service: ftp
+        permanent: yes
+        state: enabled
+
+    - name: Creating User for SFTP
+      user:
+        name: ftp_user
+        password: ftp
+
+    - name: 
+      lineinfile:
+        path: /etc/vsftpd/vsftpd.conf
+        regexp: "anonymous_enable=YES"
+        line: "anonymous_enabel=NO"
+        state: present
+      notify: restart_service 
+

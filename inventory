@@ -9,3 +9,6 @@ archnode1
 archnode2
 alma-node2
 
+[sftp_servers]
+alma-node3
+

@@ -1,0 +1,13 @@
+---
+
+- name: playbook for SFTP
+  hosts: alma-node3 
+  tasks:
+    - name: update repo
+      yum:
+        update_cache: yes
+
+- name: install SFTP packages
+  hosts: alma-node3
+  roles:
+    - sftp_servers
